@@ -1,0 +1,130 @@
+body {
+   background: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.imagenlogo {
+     width: 100%;
+    height: auto;
+}  
+header{
+    background: rgb(124, 165, 184);
+    color: #ebebd3;
+    padding: 1em 0;
+    position: relative;
+}
+header::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.site-nav{
+    top:100%;
+    right: 0;
+    position: absolute;
+    background: #555580;
+    height: 0;
+    overflow: hidden; 
+}
+.site-nav-open{
+    height: auto;
+}
+site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.site-nav li{
+    border-bottom: 1px solid #575766;
+  }
+.site-nav li:last-child{
+    border-bottom: none;
+}  
+.site-nav a{
+    color: #ebedb3;
+    display: block;
+    padding: 2em 6em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a:focus{
+    background: #e4b363;
+    color: #464655;
+    }
+.site-nav--icon{
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 3em;
+    width: 1.1em;
+    text-align: right;
+     }
+    
+.menu-toggle{
+    background:salmon;
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+}
+.menu-open .hamburguer{
+    transform: rotate(45deg);
+}
+.menu-open .hamburguer::before{
+    opacity: 0;
+}
+.menu-open .hamburguer::after{
+    transform: translateY(-3px) rotate(-90deg);
+}
+.hamburguer,
+.hamburguer::before,
+.hamburguer::after{
+    content: '';
+    display: block;
+    background: #ebebd3;
+    height: 1px;
+    width: 2em;
+    border-radius: 20px;
+    transition: all ease-in-out 500ms;
+}
+.hamburguer::before{
+    transform: translateY(-6px);
+}
+.hamburguer::after{
+    transform: translateY(3px);
+}
+
+@media (min-width:700px){
+    .menu-toggle{
+        display: none;
+    }
+    .site-nav{
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        margin-right: 10px;
+        clip-path: initial;
+}
+.site-nav li{
+    display: inline-block;
+    border: none;
+}
+.site-nav a{
+    padding: 0;
+    margin-left: 3em;
+}
+.site-nav--icon{
+    display: none;
+}
+.site-nav a:hover,
+.site-nav a:focus{
+    background: transparent;
+}
+}
