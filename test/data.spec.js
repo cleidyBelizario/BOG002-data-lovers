@@ -1,13 +1,14 @@
-import { example, anotherExample } from '../src/data.js';
+//import { example, anotherExample } from '../src/data.js';
+import { formularioFiltrado } from '../src/data.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+//para testear el formulario
+describe('filtra los Campeones por nombre', () => {
+  it('Akali', () => {
+    expect(formularioFiltrado).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `formularioFiltrado`', () => {
+    expect(formularioFiltrado()).toBe('Akali');
   });
 });
 
