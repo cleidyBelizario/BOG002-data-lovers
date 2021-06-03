@@ -1,50 +1,43 @@
-import data from './data/lol/lol.js';
 
-let obj = data;
-let lol = Object.entries(obj.data);
 
-export function filtroTipoCampeon (tag) {
-  let filtroCampeones = lol.filter((item) => item[1].tags.includes(tag));
+export function filtroTipoCampeon(tag, datos) {
+  let filtroCampeones = datos.filter((item) => item[1].tags.includes(tag));
   return filtroCampeones
-
 }
-    /*    .filter( function(ObjectKey){
-            return filterFunction(mainObject[ObjectKey])
-        } )
-        .reduce( function (result, ObjectKey){
-          result[ObjectKey] = mainObject[ObjectKey];
-          return result;
-        }, {} );*/
+function suma (a,b){
+  return a+b 
+}
+suma(2,3)
+//funcion para ordenar los campeones de A-Z y de Z-A
 
+export function sortJSON(data, key, orden) {
+  const result = data.sort(function (a, b) {
+      let x = a[key], y = b[key];
 
+      if (orden === 'asc') {
+          return((a[key] < b[key]) ? -1 : ((x > y ? 1 : 0)))
+      } 
 
-// funcion para filtrar por tipo de campeon 
+      // if (x < y){
+      //   return -1
+      // } else { 
+      //   if (x > y){
+      //     return 1
+      //   }
+      //   return 0
+      // }
 
-/*export const filtroTipo = (tags, misCampeones) => {
-    return misCampeones.filter(miCampeon => miCampeon.);
-};*/
-
-//para el formulario 
-/*export const formularioFiltrado = lol.filter(item => {
-    const textoApi = item[1].name.toLowerCase()
-    if (textoApi.indexOf(textoCamp) !== -1) {
-      return item
+      if (orden === 'desc') {
+          return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+      }
+      
+    });
+    return result
     }
-  });*/
 
-  /*export const filtroT = data[1].filter(function(tipo){
-    return tipo.tags == "Assassin"
-  })*/
- 
-/*//Recibirá en parámetro el array, la llave y el valor que quieres filtrar y te devolverá el resultado.
-export const filtroCampeon = lol.filter = function(mainObject, filterFunction){
-  return lol.keys(mainObject)
-        .filter( function(ObjectKey){
-            return filterFunction(mainObject[ObjectKey])
-        } )
-        .reduce( function (result, ObjectKey){
-            result[ObjectKey] = mainObject[ObjectKey];
-            return result;
-          }, {} );
-}
-*/
+// sortData(data, sortBy, sortOrder)
+// Debo recibir la data e iterar sobre cada uno de sus elementos segun la propiedad (sortBy) que me entreguen
+// Según el sortOrder debo:
+// 'ASC' ordenar los elementos segun el key de la a a la z
+// 'DESC' ordenar los elementos segun el key de la a a la z
+

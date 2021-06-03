@@ -1,10 +1,28 @@
-//import { formularioFiltrado } from './data.js';
+import { sortJSON, filtroTipoCampeon } from './data.js';
 import data from './data/lol/lol.js';
-import { filtroTipoCampeon } from './data.js'
+
+let cleidy = {
+  age: 29,
+  hobby: "pelicula",
+  apellido: "belizario",
+  favs : {
+    comida: ["pizza","papas" ],
+    bebida: "limonada",
+    dulce: "chocolate",
+    numero:  14,
+  }
+}
+
+console.log(cleidy.favs.comida[1]);
+console.log(cleidy['age']);
 
 
-/*//Prueba
- const obj = data;
+const obj = data;
+const campeonLol1 = Object.entries(obj.data);
+console.log(campeonLol1);
+
+/* //Prueba
+const obj = data;
 const campeonLol = Object.keys(obj.data)
 console.log(campeonLol)
 let misCampeon = campeonLol.map()*/
@@ -14,44 +32,47 @@ let misCampeon = campeonLol.map()*/
 // para tener la data en un array 
 let mostrarCampeon = document.getElementById("misCampeones")
 mostrarCampeon.addEventListener("click", ocultarP)
-function ocultarP (){
-document.querySelector("#inicio").style.display = "none";
+
+function ocultarP() {
+  document.querySelector("#inicio").style.display = "none";
 
 }
 
-const obj = data;
-const campeonLol1 = Object.entries(obj.data);
-
-function quieroSoloFiltro(){
+var arr = [1, 2, 6, 5, 10];
+arr = arr.sort()
+console.log(arr)
+//console.log(campeonLol1)
+/*function quieroSoloFiltro(){
 for (let i = 0; i < campeonLol1.length; i++) {
   const todoCampeon = campeonLol1[i][1];
   console.log(todoCampeon)
 }
-}
+}*/
 //para las card para mostrar todos los Campeones 
 
 mostrarCampeon.addEventListener("click", () => {
   mostrarDatos(campeonLol1)
 });
 
+/*------ Mostrar campeones -------*/
+
 function mostrarDatos(listaCampeones) {
   let campeones = document.getElementById('misCampeones');
-  //console.log(misCampeones2);
+  //console.log(misCampeones);
   let element = ''
   listaCampeones.forEach(item => {
     // console.log(item);
     element += `
- <article class="card flex modal">
- <div id="section1" class="container section1"></div>
- <img src=${item[1].splash} alt="" class="card img"></div>
- <div class="card-contet">
-   <h5> ${item[1].name}</h5>
-   <h5>${item[1].tags}</h5> <p>
-  </div>
-
-</article>`
-
+      <article class="card flex modal">
+        <div id="section1" class="container section1"></div>
+          <img src=${item[1].splash} alt="" class="card img"></div>
+          <div class="card-contet">
+            <h5> ${item[1].name}</h5>
+            <h5>${item[1].tags}</h5> <p>
+          </div>
+      </article>`
   });
+
   return campeones.innerHTML = element;
 }
 /*  <ul>
@@ -68,7 +89,7 @@ ${item[1].blurb}
 //console.log(mostrarDatos)
 
 //para el formulario para buscar la data de forma 
-const formulario = document.getElementById('formulario');
+//const formulario = document.getElementById('formulario');
 const inputTexto = document.getElementById('inputTexto');
 
 let ob1 = data;
@@ -88,45 +109,46 @@ inputTexto.addEventListener('input', e => {
 
 });
 
+//para ordenar los campeones 
+// ordenarAsc, ordenarDesc
 
-function botonaZ() {
-  let camp = data;
-  let ordenarCamp = Object.entries(camp.data);
-  ordenarCamp.sort(function (a, b) {
-    if (a.name > b.name) {
-      return 1;
-    }
-  })
-  mostrarDatos(ordenarCamp);
-}
-//funcion para ordenar los campeones de Z a A
-function botonZa() {
-  let camp1 = data;
-  let ordenarCamp1 = Object.entries(camp1.data);
+function ordenarData(e) {
+  let opcion = e.target.value
+  console.log(opcion)
+  if (opcion === "asc") {
+    mostrarDatos(campeonLol1)
+  } else {
+    console.log(sortJSON(campeonLol1, "name", "desc"));
+  }
 
-  const misCampeonesOrden = ordenarCamp1.reverse();
-  mostrarDatos(misCampeonesOrden)
 }
 
-function botonesOrden() {
-  let ordenAZ = document.getElementById("botonOrdenar");
-  let ordenZA = document.getElementById("botonZA");
 
-  if (ordenAZ === botonaZ()) {
-
-  } else botonZa();
-  ordenZA.value
-}
+/* Se agrega el evento change al select de ordenar */
+let orderCamp = document.z;
+orderCamp.addEventListener("change", ordenarData);
 
 //para recorrer el array de objetos y solo obtener campeones por rol 
 
 let opcionCamp = document.getElementById("filtroSelect")
 opcionCamp.addEventListener("change", organizarCampeon);
 
-function organizarCampeon(tipos){
+function organizarCampeon(tipos) {
   let target = tipos.target.value
- //console.log(filtroTipoCampeon(target,mostrarDatos));
-mostrarDatos(filtroTipoCampeon(target,campeonLol1))
+  if (target === "todos") {
+    mostrarDatos(campeonLol1)
+  } else {
+    mostrarDatos(filtroTipoCampeon(target, campeonLol1))
+  }
+  //console.log(filtroTipoCampeon(target,campeonLol1));
 }
 
 
+
+let users = [
+  { name: 'Scotty', age: '18' },
+  { name: 'Tommy', age: '21' },
+  { name: 'Sally', age: '71' },
+  { name: 'Billy', age: '18' },
+  { name: 'Timmy', age: '21' }
+];

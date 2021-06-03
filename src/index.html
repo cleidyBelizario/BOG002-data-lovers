@@ -14,30 +14,32 @@
 <body>
 
   <div class="container">
-    <h1 class='logo'> <img src="imagen/Home-page.jpg" class="imagenlogo" alt=""></h1>
+    <h1 class="logo"> <img src="imagen/Home-page.jpg" class="imagenlogo" alt=""></h1>
   </div>
 
   <!--INICIO-->
   <section id="inicio" class="inicio">
     <div class="inicio__container">
       <h3>¿QUÉ ES LEAGUE OF LEGENDS?</h3>
-      <p class="parrafo"> League of Legends es un juego de estrategia por equipos en el que dos equipos conformados por cinco
+      <p class="parrafo"> League of Legends es un juego de estrategia por equipos en el que dos equipos conformados por
+        cinco
         poderosos campeones se enfrentan para destruir la base del otro. Elige de entre más de 140 campeones para
         realizar jugadas épicas, asegurar asesinatos y destruir torretas mientras avanzas hacia la victoria.
       </p>
-    <!--<div id="laGrieta"> <img class="la_grieta" src="imagen/lagrieta.gif" alt="">-->
+      <!--<div id="laGrieta"> <img class="la_grieta" src="imagen/lagrieta.gif" alt="">-->
     </div>
-    </div>
-  </section>
 
+  </section>
   <header class="container filter-content my-2">
-    <form id="formulario">
-      <input type="text" placeholder="Ingresa tu Campeon" id="inputTexto">
-    </form>
-    <div class="custom-select" style="width: 200px;">
-      <select id="filtroSelect" class="filtroSelect">
-        <option value="">Filter Campeon</option>
-        <option value="">Todos</option>
+    <div>
+      <form id="formulario" class="filter-content ">
+        <input type="text" placeholder="Ingresa tu Campeon" id="inputTexto">
+      </form>
+    </div>
+    <div class="custom-select" style="width: 350px;">
+      <select id="filtroSelect" class="filter-content ">
+        <option value="todos">Filter Campeon</option>
+        <option value="todos">Todos</option>
         <option value="Fighter">Fighter</option>
         <option value="Tank">Tank</option>
         <option value="Mage">Mage</option>
@@ -46,66 +48,38 @@
         <option value="Marksman">Marksman</option>
       </select>
     </div>
-    <a href="https://signup.lan.leagueoflegends.com/es/signup/index"><button id="cerrar" class=" " style="width: 200px;">JUGAR</button></a>
 
+    <div class="custom-select" style="width: 250px;">
+      <select id="ordenar" class="filter-content  orden">
+        <option value="asc">Orden A-Z </option>
+        <option value="desc">Orden Z-a</option>
+      </select>
+    </div>
+    <div>
+      <a href="https://signup.lan.leagueoflegends.com/es/signup/index"><button id="cerrar" class="filter-content"
+          style="width: 250px;">JUGAR</button></a>
+    </div>
   </header>
 
-  <div class="overlay">
-    <div class="slideswow">
-      <span class="btn_cerrar">&times;</span>
-      <div class="botones atras">
-        <i class="fas fa-arrow-left"></i>
-      </div>
-      <div class="botones adelante">
-        <i class="fas fa-arrow-right"></i>
-      </div>
-      <img src="" alt="" id="img_slideswow">
-    </div>
 
-  </div>
+
   <main class="container grid" id="misCampeones">
     <article class="card">
       <img src="imagen/anime.gif" alt="" class="img-fluid">
       <div class="card-content">
-        <h4>Conoce Algunos Campeones </h4>
-        </div>
+        <h4>Aqui puedes conocer todos tus Campeones </h4>
+      </div>
     </article>
 
-    <article class="card">
-      <img class="la_grieta" src="imagen/lagrieta.gif" alt="">
-      <div class="card-content">
-        <h4> </h4>
-        </div>
-    </article>
-
-    <article class="card">
-      <img class="la_grieta" src="imagen/descarga.jpg" alt="">
-      <div class="card-content">
-        <h4> </h4>
-        </div>
-    </article>
-    
   </main>
 
-  <!--<button id="botonOrdenar">
-    <h3>Ordenar A Z</h3>
-  </button>
 
-  <button id="botonZA">
-    <h3>Ordenar Z A</h3>
-  </button>-->
+  <footer class="container__flex">
+    <div>&copy; Cleidy Belizario DATA LOVERS❤</div>
+  </footer>
 
-</body>
+  <script src="main.js" type="module"></script>
 
-<footer class="container__flex">
-  <div class="footer__icons">
-    <a href="" target="_blank" class="fab fa-facebook-f"></a>
-    <a href="" target="_blank" class="fab fa-instagram"></a>
-    <a href="" target="_blank" class="fab fa-youtube"></a>
-  </div>
-</footer>
-
-<script src="main.js" type="module"></script>
 
 </body>
 

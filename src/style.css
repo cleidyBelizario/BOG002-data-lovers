@@ -8,15 +8,15 @@ html {
 
 body {
     --color-bg: #000000;
-    --color-bg-secondary: #000000;
+    --color-bg-secondary:  #000000;
     --color-text: #000000;
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
 }
 body {
-    --color-bg: #000000;
-    --color-bg-secondary: #000000;
+    --color-bg:  #000000;
+    --color-bg-secondary:  #000000;
     --color-text: #0d0e0d;
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--color-bg);
@@ -82,14 +82,21 @@ h3{  background-color:rgb(124, 250, 145);
 }
 
 .filter-content {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+    height: 10%;
+    font-size: 100%;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6rem;
+    
    
 }
 
@@ -136,6 +143,7 @@ h3{  background-color:rgb(124, 250, 145);
     color: rgb(0, 0, 0);
     font-size: 50px;
  }
+
 
 .overlay{
     position: fixed;
